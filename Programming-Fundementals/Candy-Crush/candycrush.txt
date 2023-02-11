@@ -1,0 +1,1757 @@
+#include <iostream>
+#include <graphics.h>
+#include<cstdlib>
+#include<time.h>
+#include<conio.h>
+#include<strings.h>
+#include<fstream>
+using namespace std;
+int score=0;
+int reqscore=2200;//the required score
+int move=20;
+int cee=50;
+int startup=0;
+int startcount1=2;//for row
+int startcount2=2;//for column
+int countupdown=0;
+int countdown=0;
+int countleftright=0;
+int countright=0;
+//these are keyboard input to keep chechk of i and j corresponding to the i j of array
+int cursor_move_i=0;
+int cursor_move_j=0;
+int cursor2_move_i=0;
+int cursor2_move_j=0;
+//these are coordinates to form a perfect rectangle for our candies
+int r_x1=73;
+int r_y1=25;
+int r_x2=123;
+int r_y2=75;
+int r2_x1=73;
+int r2_y1=25;
+int r2_x2=123;
+int r2_y2=75;
+
+#define KEY_UP 72
+#define KEY_DOWN 80
+#define KEY_LEFT 75
+#define KEY_RIGHT 77
+#define KEY_X 120
+#define KEY_E 105
+//a dictionary to render colour to stripes so to know these are striped candies of this specific colour
+//now if striped candy is of
+//yellow 6
+//blue 7
+//purple 8
+//green 9
+//red 11
+void makecircle(int arr[][9],int arr2x[][9],int arr2y[][9],int arr3x[][9],int arr3y[][9],int cursor_move_a,int cursor_move_b );
+void check_row(int arr[][9],int arr2x[][9],int arr2y[][9],int arr3x[][9],int arr3y[][9]);
+void check_column(int arr[][9],int arr2x[][9],int arr2y[][9],int arr3x[][9],int arr3y[][9]);
+void check_for_combo(int arr[][9],int arr2x[][9],int arr2y[][9],int arr3x[][9],int arr3y[][9]);
+void score_calc(int arr[][9],int count_candy,int i,int j)
+{
+    if(arr[i][j]==14)
+        score=score+count_candy*30;
+    if(arr[i][j]==1)
+        score=score+count_candy*50;
+        if(arr[i][j]==10)
+        score=score+count_candy*40;
+        if(arr[i][j]==4)
+        score=score+count_candy*30;
+        if(arr[i][j]==5)
+        score=score+count_candy*60;
+
+}
+
+
+
+
+void colour_for_striped(int arr[][9],int arr2x[][9],int arr2y[][9],int arr3x[][9],int arr3y[][9],int i,int j,int way)
+
+{
+    if(way==1)
+        {
+    if(arr[i][j]==14)
+       {
+            arr[i][j]=6;
+            makecircle(arr,arr2x,arr2y,arr3x,arr3y,i,j);
+
+       }
+       else{
+    if(arr[i][j]==1)
+    {
+        arr[i][j]=7;
+        makecircle(arr,arr2x,arr2y,arr3x,arr3y,i,j);
+    } else{
+    if(arr[i][j]==5){
+        arr[i][j]=8;
+        makecircle(arr,arr2x,arr2y,arr3x,arr3y,i,j);
+    }else{
+    if(arr[i][j]==10){
+        arr[i][j]=9;
+        makecircle(arr,arr2x,arr2y,arr3x,arr3y,i,j);
+    }
+    else{
+    if(arr[i][j]==4){
+
+        arr[i][j]=11;
+   makecircle(arr,arr2x,arr2y,arr3x,arr3y,i,j);
+    }
+    }
+    }
+    }
+       }
+}
+
+if(way==2){
+    if(arr[i][j]==14)
+       {
+            arr[i][j]=20;
+            makecircle(arr,arr2x,arr2y,arr3x,arr3y,i,j);
+
+       }
+       else{
+    if(arr[i][j]==1)
+    {
+        arr[i][j]=21;
+        makecircle(arr,arr2x,arr2y,arr3x,arr3y,i,j);
+    } else{
+    if(arr[i][j]==5){
+        arr[i][j]=22;
+        makecircle(arr,arr2x,arr2y,arr3x,arr3y,i,j);
+    }else{
+    if(arr[i][j]==10){
+        arr[i][j]=23;
+        makecircle(arr,arr2x,arr2y,arr3x,arr3y,i,j);
+    }
+    else{
+    if(arr[i][j]==4){
+
+        arr[i][j]=24;
+   makecircle(arr,arr2x,arr2y,arr3x,arr3y,i,j);
+    }
+    }
+    }
+    }
+       }
+}
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+void striped_candy(int arr[][9],int arr2x[][9],int arr2y[][9],int cursor_move_a,int cursor_move_b )
+{
+
+//if(startup>0)
+delay(10);
+int a=cursor_move_a;
+int b=cursor_move_b;
+
+//delay(140);
+
+
+     setcolor(arr[a][b]);
+     setfillstyle(HATCH_FILL,arr[a][b]);
+       circle(arr2x[a][b],arr2y[a][b],20);
+      floodfill(arr2x[a][b],arr2y[a][b],arr[a][b]);
+
+
+
+
+
+
+}
+
+void color_packet_candy(int arr[][9],int arr2x[][9],int arr2y[][9],int arr3x[][9],int arr3y[][9],int i,int j)
+{
+    if(arr[i][j]==14)
+       {
+            arr[i][j]=12;
+            makecircle(arr,arr2x,arr2y,arr3x,arr3y,i,j);
+
+       }
+       else{
+    if(arr[i][j]==1)
+    {
+        arr[i][j]=13;
+        makecircle(arr,arr2x,arr2y,arr3x,arr3y,i,j);
+    } else{
+    if(arr[i][j]==5){
+        arr[i][j]=15;
+        makecircle(arr,arr2x,arr2y,arr3x,arr3y,i,j);
+    }else{
+    if(arr[i][j]==10){
+        arr[i][j]=16;
+        makecircle(arr,arr2x,arr2y,arr3x,arr3y,i,j);
+    }
+    else{
+    if(arr[i][j]==4){
+
+        arr[i][j]=17;
+   makecircle(arr,arr2x,arr2y,arr3x,arr3y,i,j);
+    }
+    }
+    }
+    }
+       }
+}
+
+
+void bomb_candy(int arr[9][9],int arr2x[][9],int arr2y[][9],int arr3x[][9],int arr3y[][9],int i,int j)
+
+{
+    arr[i][j]=100;
+
+}
+
+
+
+
+void makecircle(int arr[][9],int arr2x[][9],int arr2y[][9],int arr3x[][9],int arr3y[][9],int cursor_move_a,int cursor_move_b )
+{
+   // if(startup>0)
+   // delay(10);
+int a=cursor_move_a;
+int b=cursor_move_b;
+int    dup_arr=0;
+//delay(140);//yellow 6
+//blue 7
+//purple 8
+//green 9
+//red 11
+
+if(arr[a][b]==20)
+{
+     setcolor(0);
+     setfillstyle(HATCH_FILL,0);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],0);
+
+
+
+
+    setcolor(14);
+     setfillstyle(3,14);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],14);
+
+}
+else{
+if( arr[a][b]==21)
+    {
+         setcolor(0);
+     setfillstyle(HATCH_FILL,0);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],0);
+
+
+
+
+
+
+        setcolor(1);
+     setfillstyle(3,1);
+     circle(arr2x[a][b],arr2y[a][b],20);
+
+    floodfill(arr2x[a][b],arr2y[a][b],1);
+
+    }
+    else{
+    if(arr[a][b]==22)
+    {
+
+         setcolor(0);
+     setfillstyle(HATCH_FILL,0);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],0);
+
+
+
+
+
+        setcolor(5);
+     setfillstyle(3,5);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],5);
+
+    }
+    else{
+
+        if(arr[a][b]==23)
+        {
+             setcolor(0);
+     setfillstyle(HATCH_FILL,0);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],0);
+
+
+
+
+
+
+            setcolor(10);
+     setfillstyle(3,10);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],10);
+
+        }
+        else{
+        if(arr[a][b]==24)
+        {
+
+
+             setcolor(0);
+     setfillstyle(HATCH_FILL,0);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],0);
+
+
+
+
+
+            setcolor(4);
+     setfillstyle(3,4);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],4);
+
+        }
+        else{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if(arr[a][b]==100)
+{
+     setcolor(0);
+     setfillstyle(0,0);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],0);
+
+
+
+
+    setcolor(6);
+     setfillstyle(11,14);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],6);
+
+
+}
+
+else{
+
+if(arr[a][b]==12)
+{
+     setcolor(0);
+     setfillstyle(HATCH_FILL,0);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],0);
+
+
+
+
+    setcolor(14);
+     setfillstyle(0,14);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],14);
+
+}
+else{
+if( arr[a][b]==13)
+    {
+         setcolor(0);
+     setfillstyle(HATCH_FILL,0);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],0);
+
+
+
+
+
+
+        setcolor(1);
+     setfillstyle(0,1);
+     circle(arr2x[a][b],arr2y[a][b],20);
+
+    floodfill(arr2x[a][b],arr2y[a][b],1);
+
+    }
+    else{
+    if(arr[a][b]==15)
+    {
+
+         setcolor(0);
+     setfillstyle(HATCH_FILL,0);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],0);
+
+
+
+
+
+        setcolor(5);
+     setfillstyle(0,5);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],5);
+
+    }
+    else{
+
+        if(arr[a][b]==16)
+        {
+             setcolor(0);
+     setfillstyle(HATCH_FILL,0);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],0);
+
+
+
+
+
+
+            setcolor(10);
+     setfillstyle(0,10);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],10);
+
+        }
+        else{
+        if(arr[a][b]==17)
+        {
+
+
+             setcolor(0);
+     setfillstyle(0,0);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],0);
+
+
+
+
+
+            setcolor(4);
+     setfillstyle(0,4);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],4);
+
+        }else{
+
+
+if(arr[a][b]==6)
+{
+     setcolor(0);
+     setfillstyle(HATCH_FILL,0);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],0);
+
+
+
+
+    setcolor(14);
+     setfillstyle(HATCH_FILL,14);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],14);
+
+}
+else{
+if( arr[a][b]==7)
+    {
+         setcolor(0);
+     setfillstyle(HATCH_FILL,0);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],0);
+
+
+
+
+
+
+        setcolor(1);
+     setfillstyle(HATCH_FILL,1);
+     circle(arr2x[a][b],arr2y[a][b],20);
+
+    floodfill(arr2x[a][b],arr2y[a][b],1);
+
+    }
+    else{
+    if(arr[a][b]==8)
+    {
+
+         setcolor(0);
+     setfillstyle(HATCH_FILL,0);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],0);
+
+
+
+
+
+        setcolor(5);
+     setfillstyle(HATCH_FILL,5);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],5);
+
+    }
+    else{
+
+        if(arr[a][b]==9)
+        {
+             setcolor(0);
+     setfillstyle(HATCH_FILL,0);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],0);
+
+
+
+
+
+
+            setcolor(10);
+     setfillstyle(HATCH_FILL,10);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],10);
+
+        }
+        else{
+        if(arr[a][b]==11)
+        {
+
+
+             setcolor(0);
+     setfillstyle(HATCH_FILL,0);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],0);
+
+
+
+
+
+            setcolor(4);
+     setfillstyle(HATCH_FILL,4);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],4);
+
+        }
+        else{
+
+
+     setcolor(arr[a][b]);
+     setfillstyle(SOLID_FILL,arr[a][b]);
+     circle(arr2x[a][b],arr2y[a][b],20);
+     floodfill(arr2x[a][b],arr2y[a][b],arr[a][b]);
+
+        }
+
+        }
+    }
+    }
+}
+
+
+
+}
+        }
+    }
+    }
+}
+}
+        }
+        }
+    }
+    }
+}
+}
+
+void a_candy_colour(int arr[][9],int i,int j)
+{
+    if(arr[i][j]==0)
+
+              arr[i][j]=14;
+          if(arr[i][j]==2)
+
+            arr[i][j]=5;
+
+         if(arr[i][j]==3)
+
+
+            arr[i][j]=10;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void giverealcolor(int arr[][9])
+{
+
+    for(int i=0;i<9;i++)
+    {
+        for(int j=0;j<9;j++)
+        {
+
+         if(arr[i][j]==0)
+
+              arr[i][j]=14;
+          if(arr[i][j]==2)
+
+            arr[i][j]=5;
+
+         if(arr[i][j]==3)
+
+
+            arr[i][j]=10;
+
+
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+void shift_down(int arr[][9],int arr2x[][9],int arr2y[][9],int arr3x[][9],int arr3y[][9]);
+
+
+
+void candies_after_crush(int arr[][9],int arr2x[][9],int arr2y[][9],int arr3x[][9],int arr3y[][9])//to generate random candies after crushed
+{
+    int i,j;
+    for (j=0;j<9;j++)
+    {
+        for(i=8;i>=0;i--)
+        {
+            if(arr[i][j]==0)
+            {
+                arr[i][j]=rand()%5;
+                delay(20);
+                a_candy_colour( arr,i,j);
+                makecircle(arr,arr2x,arr2y,arr3x,arr3y,i,j );
+                if(startup>0)
+
+                check_for_combo( arr,arr2x,arr2y,arr3x, arr3y);
+                 shift_down(arr, arr2x, arr2y, arr3x,arr3y);
+
+
+            }
+        }
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void printarr(int arr[][9])
+{
+    for(int i=0;i<9;i++)
+    {
+        for(int j=0;j<9;j++)
+        {
+            cout<<arr[i][j]<<" ";
+
+        }
+        cout <<endl;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void crush_circle(int arr[][9],int arr2x[][9],int arr2y[][9],int i,int j)
+{
+    if(startup>0)
+    delay(100);
+    arr[i][j]=0;
+    setcolor(BLACK);
+     setfillstyle(SOLID_FILL,BLACK);
+     circle(arr2x[i][j],arr2y[i][j],20);
+     floodfill(arr2x[i][j],arr2y[i][j],BLACK);
+
+}
+
+
+
+
+
+
+
+void shift_down(int arr[][9],int arr2x[][9],int arr2y[][9],int arr3x[][9],int arr3y[][9])
+{
+    int count=0;
+    int a,b,k;
+    int j=0,i=0;
+   for(j=0;j<9;j++)
+   {
+       for(i=8;i>=0;i--)
+       {
+          if(arr[i][j]==0)
+          {
+              count=count+1;
+          }
+          //cout<<endl<<"count 1 2 3 4 5 6 7 8 9 "<<count<<endl;
+         else
+            {
+                if(arr[i][j]!=0&&count>0)
+            {
+                a=i+count;
+                arr[a][j]=arr[i][j];
+                 makecircle(arr,arr2x,arr2y,arr3x,arr3y,a,j);
+                arr[i][j]=0;
+                 makecircle(arr,arr2x,arr2y,arr3x,arr3y,i,j);
+                //i--;
+            }
+                else{count=0;  }
+            }
+       }
+       cout<<endl<<count<<endl;
+       count=0;
+
+   }
+
+
+}
+
+void crush_candy(int arr[][9],int arr2x[][9],int arr2y[][9],int arr3x[][9],int arr3y[][9],int count,int i,int j,int way)
+{
+    int special_count=count;
+    int a=0;
+    if(way==1)
+        {
+    for(;count!=-1;count--)
+    {
+        if(special_count==4&&cursor_move_i==i&&cursor_move_j==j)
+        {
+             bomb_candy(arr,arr2x,arr2y,arr3x,arr3y,cursor_move_i,cursor_move_j);
+              makecircle(arr,arr2x,arr2y,arr3x,arr3y,cursor_move_i,cursor_move_j);
+        }
+        else{
+
+
+         if(special_count==4&&cursor2_move_i==i&&cursor2_move_j==j)
+         {
+              bomb_candy(arr,arr2x,arr2y,arr3x,arr3y,cursor2_move_i,cursor2_move_j);
+              makecircle(arr,arr2x,arr2y,arr3x,arr3y,cursor2_move_i,cursor2_move_j);
+         }
+         else{
+
+        if (special_count==3&&cursor_move_i==i&&cursor_move_j==j)
+             {
+                //striped_candy(arr,arr2x,arr2y,i,j);
+                //  makecircle(arr,arr2x,arr2y,arr3x,arr3y,a,j);
+                 colour_for_striped(arr,arr2x,arr2y,arr3x,arr3y,cursor_move_i,cursor_move_j,1);
+                 cout<<"THIS IS THE STRIPED********** i "<<i<<"***j  "<<j<<"  ***************"<<arr[i][j]<<"********************"<<endl;
+                  makecircle(arr,arr2x,arr2y,arr3x,arr3y,cursor_move_i,cursor_move_j);
+             }
+             else{
+
+
+            if(special_count==3&&cursor2_move_i==i&&cursor2_move_j==j)
+            {
+                //striped_candy(arr,arr2x,arr2y,i,j);
+                colour_for_striped(arr,arr2x,arr2y,arr3x,arr3y,cursor2_move_i,cursor2_move_j,1);
+                cout<<"THIS IS THE STRIPED****************************"<<arr[i][j]<<"********************"<<endl;
+                 makecircle(arr,arr2x,arr2y,arr3x,arr3y,cursor2_move_i,cursor2_move_j);
+            }
+            else{
+
+                crush_circle(arr,arr2x,arr2y, i, j);
+            }
+            }
+            }
+            }
+
+
+
+
+
+        j--;
+        }
+        }
+
+
+
+
+
+        if(way==2)
+        {
+            for(;count!=-1;count--)
+    {
+        if(special_count==4&&cursor_move_i==i&&cursor_move_j==j)
+        {
+             bomb_candy(arr,arr2x,arr2y,arr3x,arr3y,cursor_move_i,cursor_move_j);
+              makecircle(arr,arr2x,arr2y,arr3x,arr3y,cursor_move_i,cursor_move_j);
+        }
+else{
+
+         if(special_count==4&&cursor2_move_i==i&&cursor2_move_j==j)
+         {
+              bomb_candy(arr,arr2x,arr2y,arr3x,arr3y,cursor_move_i,cursor_move_j);
+              makecircle(arr,arr2x,arr2y,arr3x,arr3y,cursor_move_i,cursor_move_j);
+         }
+         else{
+
+
+        if (special_count==3&&cursor_move_i==i&&cursor_move_j==j)
+        {
+
+
+           // striped_candy(arr,arr2x,arr2y,i,j);
+             colour_for_striped(arr,arr2x,arr2y,arr3x,arr3y,i,j,2);
+            makecircle(arr,arr2x,arr2y,arr3x,arr3y,i,j);
+        }
+        else{
+
+
+            if(special_count==3&&cursor2_move_i==i&&cursor2_move_j==j)
+            {
+            //striped_candy(arr,arr2x,arr2y,i,j);
+            colour_for_striped(arr,arr2x,arr2y,arr3x,arr3y,i,j,2);
+            makecircle(arr,arr2x,arr2y,arr3x,arr3y,i,j);
+            }
+            else{
+
+
+                crush_circle(arr,arr2x,arr2y, i, j);
+            }
+            }
+            }
+            }
+
+
+        //crush_circle(arr,arr2x,arr2y, i, j);
+        i--;
+    }
+
+
+
+
+        cout<<endl<<"********************************"<<endl;
+        printarr(arr);
+        cout<<endl<<"*************************";
+        }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+void check_column(int arr[][9],int arr2x[][9],int arr2y[][9],int arr3x[][9],int arr3y[][9])
+{
+    int i;
+    int j;
+    int a=0;
+    int b=0;
+    int c=0;
+    int count_candy=0;
+
+    for( j=0;j<9;j++)
+    {
+        for( i=0;i<9;i++)
+        {
+            c=i+1;
+            a=arr[i][j];
+            b=arr[c][j];
+            if(a==b)
+                {
+                    //startcount2++;
+                    count_candy++;}
+        else{
+            if(a!=b&&count_candy>1)
+                {
+                    startcount2++;
+                    cout<<"combo vertical "<<a<<endl;
+                    score_calc(arr,count_candy,i,j);
+                    crush_candy(arr,arr2x,arr2y,arr3x,arr3y,count_candy, i,j,2);
+                    count_candy=0;
+                }
+            else
+
+            {
+                    if(a!=b)
+                {
+                    count_candy=0;
+                }
+            }
+
+        }
+
+
+
+        }
+         if(count_candy>=2)
+           {
+
+           cout<<endl<<"combo vertical "<<a<<endl;
+           crush_candy(arr,arr2x,arr2y,arr3x,arr3y,count_candy,i,j,2);
+           }
+        count_candy=0;
+       // cout<<"no combo";
+}
+
+
+
+
+}
+
+int check_for_packet(int arr[][9],int arr2x[][9],int arr2y[][9],int arr3x[][9],int arr3y[][9],int count, int i,int j)
+{
+    int a=i;
+    int b=j;
+    int c=b;
+    int d=0;
+    int special_count=count;
+    if(count==2)
+    {
+      for(;count!=-1;count--)
+    {
+        //*************
+        if(i>=2)
+        {
+            if(arr[i][j]==arr[i-2][j]==arr[i-1][j])
+            {color_packet_candy(arr,arr2x,arr2y,arr3x,arr3y,i, j);
+            crush_circle(arr,arr2x,arr2y,i-2,j);
+            crush_circle(arr,arr2x,arr2y,i-1,j);
+            while(special_count!=-1)
+
+            {
+                if(b!=j)
+                {
+
+            crush_circle(arr,arr2x,arr2y,a,b);
+                }
+                b--;
+                special_count--;
+            }
+
+            count=-1;
+            return 1;
+            }
+            else
+        {
+            if(arr[a][b]==arr[i+2][j]==arr[i+1][j])
+               {
+
+                color_packet_candy(arr,arr2x,arr2y,arr3x,arr3y,a, b);
+                crush_circle(arr,arr2x,arr2y,i+2,j);
+            crush_circle(arr,arr2x,arr2y,i+1,j);
+            while(special_count!=-1)
+
+            {
+                if(b!=j)
+                {
+
+           crush_circle(arr,arr2x,arr2y,a,b);
+                }
+                b--;
+                special_count--;
+            }
+            count=-1;
+            return 1;
+               }
+
+
+
+
+        else{
+                if(arr[a][b]==arr[i+1][j]==arr[i-1][j])
+                {
+                     color_packet_candy(arr,arr2x,arr2y,arr3x,arr3y,i, j);
+
+                crush_circle(arr,arr2x,arr2y,i+1,j);
+            crush_circle(arr,arr2x,arr2y,i-1,j);
+            while(special_count!=0)
+
+            {
+
+          crush_circle(arr,arr2x,arr2y,a,b--);
+
+
+                special_count--;
+            }
+            count=-1;
+            return 1;
+
+
+        }
+         else{
+                if(arr[a][b-2]==arr[i+1][j]==arr[i-1][j])
+                {
+                     color_packet_candy(arr,arr2x,arr2y,arr3x,arr3y,a, b-2);
+
+                crush_circle(arr,arr2x,arr2y,i+1,j);
+            crush_circle(arr,arr2x,arr2y,i-1,j);
+            while(special_count!=0)
+
+            {
+                d=0;
+          crush_circle(arr,arr2x,arr2y,a,(b-d));
+          d++;
+            }
+            return 1;
+
+        }
+        }
+         }
+        }
+    }
+
+        else
+        {
+            if(arr[i][j]==arr[i+2][j]==arr[i+1][j])
+               {
+
+                color_packet_candy(arr,arr2x,arr2y,arr3x,arr3y,i, j);
+
+                crush_circle(arr,arr2x,arr2y,i+2,j);
+            crush_circle(arr,arr2x,arr2y,i+1,j);
+            while(special_count!=-1)
+
+            {
+                if(b!=j)
+                {
+
+
+
+
+            crush_circle(arr,arr2x,arr2y,a,b);
+                }
+                b--;
+                special_count--;
+            }
+            count=-1;
+            return 1;
+               }
+           else{
+                if(arr[a][b]==arr[i+1][j]==arr[i-1][j])
+                {
+                     color_packet_candy(arr,arr2x,arr2y,arr3x,arr3y,i, j);
+
+                crush_circle(arr,arr2x,arr2y,i+1,j);
+            crush_circle(arr,arr2x,arr2y,i-1,j);
+            while(special_count!=0)
+
+            {
+
+          crush_circle(arr,arr2x,arr2y,a,b--);
+
+
+                special_count--;
+            }
+            count=-1;
+            return 1;
+
+
+        }
+         else{
+                if(arr[a][b-2]==arr[i+1][j]==arr[i-1][j])
+                {
+                     color_packet_candy(arr,arr2x,arr2y,arr3x,arr3y,a, b-2);
+
+                crush_circle(arr,arr2x,arr2y,i+1,j);
+            crush_circle(arr,arr2x,arr2y,i-1,j);
+            while(special_count!=0)
+
+            {
+                d=0;
+          crush_circle(arr,arr2x,arr2y,a,(b-d));
+          d++;
+
+        }
+        return 1;
+
+                }
+         }
+           }
+        }
+
+        }
+        j--;
+    }
+        return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void check_row(int arr[][9],int arr2x[][9],int arr2y[][9],int arr3x[][9],int arr3y[][9])
+
+{
+    int i=0;
+    int j=0;
+    int a=0;
+    int b=0;
+    int c=0;
+    int count_candy=0;
+    int packet_check=0;
+
+    for(i=0;i<9;i++)
+    {
+        for( j=0;j<9;j++)
+        {
+            c=j+1;
+            a=arr[i][j];
+            b=arr[i][c];
+            if(a==b)
+            {
+                //startcount1++;
+
+                            count_candy++;
+            }
+        else{
+            if(a!=b&&count_candy>1)
+                {
+                    startcount1++;
+                    cout<<"combo "<<a<<" j "<<j<<" i "<<i<<endl;
+                   // if(startup>0)
+                    //{
+
+
+                  //  packet_check=check_for_packet(arr,arr2x,arr2y,arr3x,arr3y,count_candy, i,j);
+                  //  delay(1000);
+                    //}
+                    //if(packet_check==0)
+                    score_calc(arr,count_candy,i,j);
+
+                    crush_candy(arr,arr2x,arr2y,arr3x,arr3y,count_candy, i,j,1);
+                    count_candy=0;
+                }
+            else
+
+            {
+                    if(a!=b)
+                {
+                    count_candy=0;
+                }
+            }
+
+        }
+
+
+
+        }
+         if(count_candy>1)
+           {
+
+           cout<<endl<<"combo "<<a<<endl;
+           crush_candy(arr,arr2x,arr2y,arr3x,arr3y,count_candy, i,j,1);
+           }
+        count_candy=0;
+       // cout<<"no combo";
+}
+
+}
+
+//void check_column(int arr[][9],int arr2x[][9],int arr2y[][9],int arr3x[][9],int arr3y[][9])
+
+
+
+
+void check_for_combo(int arr[][9],int arr2x[][9],int arr2y[][9],int arr3x[][9],int arr3y[][9])
+{
+
+
+    check_row(arr,arr2x, arr2y,arr3x,arr3y);
+    check_column(arr,arr2x, arr2y,arr3x,arr3y);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void printtest(int arr2x[9][9],int arr2y[9][9])
+{
+    for(int i =0;i<9;i++)
+    {
+        for(int j=0;j<9;j++)
+        {
+            cout<<arr2x[i][j]<<" ";
+
+        }
+        cout<<endl;
+    }
+    cout<<endl<<endl;
+    for(int o =0;o<9;o++)
+    {
+        for(int p=0;p<9;p++)
+        {
+            cout<<arr2y[o][p]<<" ";
+
+        }
+        cout<<endl;
+    }
+
+
+
+}
+
+
+
+
+void copy_coordinates(int arr2x[][9],int arr2y[][9],int arr3x[][9],int arr3y[][9])
+{
+    for(int i=0;i<9;i++)
+    {
+        for(int j=0;j<9;j++)
+        {
+            arr3x[i][j]=arr2x[i][j];
+            arr3y[i][j]=arr2y[i][j];
+
+        }
+
+    }
+
+    printtest( arr3x, arr3y );
+}
+
+void redo_that_swap(int arr[][9],int arr2x[][9],int arr2y[][9],int arr3x[][9],int arr3y[][9])
+{
+    int    dup_arr=0;
+   dup_arr=arr[cursor_move_i][cursor_move_j];
+   arr[cursor_move_i][cursor_move_j]= arr[cursor2_move_i][cursor2_move_j];
+   arr[cursor2_move_i][cursor2_move_j]=dup_arr;
+   makecircle(arr,arr2x,arr2y,arr3x,arr3y,cursor_move_i,cursor_move_j);
+
+   makecircle(arr,arr2x,arr2y,arr3x,arr3y,cursor2_move_i,cursor2_move_j);
+}
+
+
+
+
+
+
+void do_that_swap(int arr[][9],int arr2x[][9],int arr2y[][9],int arr3x[][9],int arr3y[][9])
+
+{
+int    dup_arr=0;
+   dup_arr=arr[cursor_move_i][cursor_move_j];
+   arr[cursor_move_i][cursor_move_j]= arr[cursor2_move_i][cursor2_move_j];
+   arr[cursor2_move_i][cursor2_move_j]=dup_arr;
+   makecircle(arr,arr2x,arr2y,arr3x,arr3y,cursor_move_i,cursor_move_j);
+
+   makecircle(arr,arr2x,arr2y,arr3x,arr3y,cursor2_move_i,cursor2_move_j);
+}
+
+
+
+
+
+
+
+
+
+void the_rectangle(int r_x1,int r_y1,int r_x2,int r_y2)
+{
+    setcolor(14);
+    rectangle(r_x1,r_y1,r_x2,r_y2);
+
+}
+
+void do_no_rect(int r_x1,int r_y1,int r_x2,int r_y2)
+{
+    setcolor(BLACK);
+    rectangle(r_x1,r_y1,r_x2,r_y2);
+
+}
+
+
+void second_input_by_keyboard(int arr[][9])
+{
+   //if(move!=20)
+     //cursor_move_j=  cursor_move_j++;
+countupdown=0;
+countleftright=0;
+    cursor2_move_i=cursor_move_i;
+    cursor2_move_j=cursor_move_j;
+    r2_x1=r_x1;
+    r2_y1=r_y1;
+    r2_x2=r_x2;
+    r2_y2=r_y2;
+
+    the_rectangle( r2_x1, r2_y1,r2_x2,r2_y2);
+
+    int key=getch();
+    int value=key;
+    while(value!= KEY_X)
+    {
+        switch(getch())
+        {
+        case KEY_UP:
+            {
+                if(cursor2_move_i!=0&&countupdown<=0&&countleftright==0)
+                    {
+                         cursor2_move_i--;
+
+
+                        do_no_rect( r2_x1, r2_y1, r2_x2, r2_y2);
+
+                        //cleardevice();
+                        //clearviewport( );
+                    r2_y1=r2_y1-50;
+                    r2_y2=r2_y2-50;
+
+                    the_rectangle(r2_x1,r2_y1,r2_x2,r2_y2);
+                    countupdown++;
+
+                    }
+                    break;
+
+            }
+        case KEY_DOWN:
+            {
+                if(cursor2_move_i!=8&&countupdown>=0&&countleftright==0)
+                {
+                    //cleardevice() ;
+                   // clearviewport( );
+                   do_no_rect( r2_x1,r2_y1, r2_x2, r2_y2);
+                    cursor2_move_i++;
+                    r2_y1=r2_y1+50;
+                    r2_y2=r2_y2+50;
+                     the_rectangle(r2_x1,r2_y1,r2_x2,r2_y2);
+                     countupdown--;
+                }
+                break;
+
+            }
+        case KEY_RIGHT:
+            {
+                if(cursor2_move_j!=8&&countleftright<=0&&countupdown==0)
+
+                {do_no_rect( r2_x1,r2_y1, r2_x2, r2_y2);
+                    cursor2_move_j++;
+                    r2_x1=r2_x1+50;
+                    r2_x2=r2_x2+50;
+                     the_rectangle(r2_x1,r2_y1,r2_x2,r2_y2);
+                     countleftright++;
+                }
+                break;
+
+
+            }
+            case KEY_LEFT:
+                {
+                    if(cursor2_move_j!=0&&countleftright>=0&&countupdown==0)
+                   {
+
+                    do_no_rect( r2_x1,r2_y1, r2_x2, r2_y2);
+                    cursor2_move_j--;
+                    r2_x1=r2_x1-50;
+                    r2_x2=r2_x2-50;
+                     the_rectangle(r2_x1,r2_y1,r2_x2,r2_y2);
+                     countleftright--;
+
+                }
+                break;
+
+                }
+
+        }
+        key=getch();
+        value=key;
+    }
+    cout<<cursor2_move_i<<endl<<cursor2_move_j<<endl;
+}
+
+
+
+
+
+
+
+
+int input_by_keyboard(int arr[][9])
+{
+    int key=getch();
+    int value=key;
+    while(value!= KEY_X)
+    {
+        switch(getch())
+        {
+        case KEY_UP:
+            {
+                if(cursor_move_i!=0)
+                    {
+
+                        cursor_move_i--;
+                        do_no_rect( r_x1, r_y1, r_x2, r_y2);
+                        //cleardevice();
+                        //clearviewport( );
+                    r_y1=r_y1-50;
+                    r_y2=r_y2-50;
+
+                    the_rectangle(r_x1,r_y1,r_x2,r_y2);
+                    }
+                    break;
+
+            }
+        case KEY_DOWN:
+            {
+                if(cursor_move_i!=8)
+                {
+                    //cleardevice() ;
+                   // clearviewport( );
+                   do_no_rect( r_x1,r_y1, r_x2, r_y2);
+                    cursor_move_i++;
+                    r_y1=r_y1+50;
+                    r_y2=r_y2+50;
+                     the_rectangle(r_x1,r_y1,r_x2,r_y2);
+                }
+                break;
+
+            }
+        case KEY_RIGHT:
+            {
+                if(cursor_move_j!=8)
+
+                {do_no_rect( r_x1,r_y1, r_x2, r_y2);
+                    cursor_move_j++;
+                    r_x1=r_x1+50;
+                    r_x2=r_x2+50;
+                     the_rectangle(r_x1,r_y1,r_x2,r_y2);
+                }
+                break;
+
+
+            }
+            case KEY_LEFT:
+                {
+                    if(cursor_move_j!=0)
+                   {
+
+                    do_no_rect( r_x1,r_y1, r_x2, r_y2);
+                    cursor_move_j--;
+                    r_x1=r_x1-50;
+                    r_x2=r_x2-50;
+                     the_rectangle(r_x1,r_y1,r_x2,r_y2);
+
+                }
+                break;
+            case KEY_E:
+                return 105;
+
+                }
+
+        }
+        key=getch();
+        value=key;
+    }
+    cout<<cursor_move_i<<endl<<cursor_move_j<<endl;
+    cout<<"sec ans\n";
+    second_input_by_keyboard(arr);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+void rendercolor(int arr[][9])
+//a function to randomly generate numbers for all our candies these would help in giving colour to our candies
+//but these colors are of no use so we create another function to assign the colour that we want to these colours
+//named as give real colour.constantly saving and updating them in the 2d array named "arr"
+{
+    int falsecolor=0;
+    srand(time(0));
+    int a=0;
+    for(int i =0 ; i<9;i++)
+    {
+        for(int j=0;j<9;j++)
+        {
+
+            arr[i][j]= rand()%5;
+            cout<<arr[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    giverealcolor(arr);
+}
+
+
+
+
+void draw_candy(int arr[][9],int arr2x[][9],int arr2y[][9],int arr3x[][9],int arr3y[][9])
+{
+    //int t=rand()%5;
+    int c=10;
+    int x=100,y=50,radius=20;
+    int z=x;
+    for(int i=0;i<9;i++)
+    {
+        x=z;
+        for(int j=0;j<9;j++)
+        {
+            arr2x[i][j]=x;
+            arr2y[i][j]=y;
+
+
+makecircle(arr,arr2x, arr2y,arr3x,arr3y,i,j);
+             /*setcolor(arr[i][j]);
+            //setfillstyle(2,arr[i][j]);
+            circle(x,y,radius);
+            setfillstyle(SOLID_FILL,arr[i][j]);
+            floodfill(x,y,arr[i][j]);*/
+
+            x=x+50;
+
+
+        }
+
+        y=y+50;
+
+    }
+/*the_rectangle(r_x1,r_y1,r_x2,r_y2);
+input_by_keyboard(arr);
+printtest(arr2x,arr2y);
+do_that_swap(arr,arr2x,arr2y,arr3x,arr3y);
+*/
+check_for_combo(arr, arr2x, arr2y,arr3x, arr3y);
+
+}
+void menu(int arr[][9])
+{
+//for saving
+ofstream fout;
+fout.open("candycrush.txt");
+if(fout)
+{
+    for(int i=0;i<9;i++)
+    {
+        for(int j=0;j<9;j++)
+        {
+            fout<<arr[i][j]<<"\n";
+        }
+    }
+}
+else cout<<"file not found";
+//to read
+ifstream fin;
+fin.open("candycrush.txt");
+if(fin)
+{
+    for(int i=0;i<9;i++)
+    {
+        for(int j=0;j<9;j++)
+        {
+            fin>>arr[i][j];
+        }
+
+    }
+}
+else
+     cout<<"file not found";
+
+}
+
+
+
+
+int main()
+{
+    int arr[9][9];//array to store colours
+    int arr2x[9][9];//array to store x value of circles that are formed also which will be selected first
+    int arr2y[9][9];//simmilaraly y values of first selection
+    int arr3x[9][9];//array to make a copy of x values of circles
+    int arr3y[9][9];//similarly.....so arr3 would prevent the dta of a circle to be overwritten
+
+
+    rendercolor(arr);
+
+    int gd=DETECT,gm;
+    initgraph(&gd,&gm,"c:\\TC\\BGI") ;
+     draw_candy(arr, arr2x,arr2y,arr3x,arr3y);
+
+     //copy_coordinates(arr2x, arr2y, arr3x,arr3y);
+
+     while(startcount1>0||startcount2>0)
+     {
+         startcount1=0;
+         startcount2=0;
+         check_for_combo(arr, arr2x, arr2y,arr3x, arr3y);
+    // shift_down(arr,arr2x,arr2y,arr3x,arr3y);
+    // the_rectangle(arr);
+    printarr(arr);
+    shift_down(arr, arr2x, arr2y, arr3x,arr3y);
+    printarr(arr);
+    candies_after_crush(arr,arr2x,arr2y,arr3x,arr3y);
+
+     }
+     startup=1;
+
+
+     int value=0;
+      draw_candy(arr, arr2x,arr2y,arr3x,arr3y);
+ //the_rectangle(r_x1,r_y1,r_x2,r_y2);
+
+while(value!=105)
+  {
+startcount1=0;
+         startcount2=0;
+       // the_rectangle(r_x1,r_y1,r_x2,r_y2);
+
+value=input_by_keyboard(arr);
+do_no_rect( r2_x1, r2_y1, r2_x2, r2_y2);
+printtest(arr2x,arr2y);
+do_that_swap(arr,arr2x,arr2y,arr3x,arr3y);
+ check_for_combo(arr, arr2x, arr2y,arr3x, arr3y);
+
+
+ if(startcount1==0&&startcount2==0)
+    redo_that_swap(arr,arr2x,arr2y,arr3x,arr3y);
+
+
+ while(startcount1>0||startcount2>0)
+     {
+         startcount1=0;
+         startcount2=0;
+         check_for_combo(arr, arr2x, arr2y,arr3x, arr3y);
+    // shift_down(arr,arr2x,arr2y,arr3x,arr3y);
+    // the_rectangle(arr);
+    printarr(arr);
+    shift_down(arr, arr2x, arr2y, arr3x,arr3y);
+    printarr(arr);
+    candies_after_crush(arr,arr2x,arr2y,arr3x,arr3y);
+
+     }
+    // shift_down(arr,arr2x,arr2y,arr3x,arr3y);
+    // the_rectangle(arr);
+    printarr(arr);
+    shift_down(arr, arr2x, arr2y, arr3x,arr3y);
+    printarr(arr);
+    candies_after_crush(arr,arr2x,arr2y,arr3x,arr3y);
+    move--;
+
+
+
+
+}
+// key=getch();
+ //value =key;
+
+
+    printarr(arr);
+     cout<<getmaxx()<<endl;
+     cout<<getmaxy()<<endl;
+    //line(200,300,400,300);
+    getch();
+    return 0;
+
+}

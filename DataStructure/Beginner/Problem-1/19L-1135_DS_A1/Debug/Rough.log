@@ -1,0 +1,4 @@
+﻿  Search Engine.cpp
+D:\VS Projects\Rough\Rough\Search Engine.cpp(380): warning C4018: '<': signed/unsigned mismatch
+D:\VS Projects\Rough\Rough\Search Engine.cpp(334): warning C4715: 'Search_Engine::Print_Ranked_list': not all control paths return a value
+  Rough.vcxproj -> D:\VS Projects\Rough\Debug\Rough.exe

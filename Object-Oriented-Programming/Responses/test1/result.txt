@@ -1,0 +1,5 @@
+I am happy: day
+I am neither angry nor happy: Third
+I am happy: day
+I am angry: raining
+I am happy: Ducks

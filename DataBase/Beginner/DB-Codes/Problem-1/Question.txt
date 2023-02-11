@@ -1,0 +1,47 @@
+Exercise
+Create a database and schema that contain following tables.
+Student:
+RollNum Name Gender Phone
+L164123 Ali Ahmad Male 0333-3333333
+L164124 Rafia Ahmed Female 0333-3456789
+L164125 Basit Junaid Male 0345-3243567
+Attendance:
+RollNum Date Status ClassVenue
+L164123 2-22-2016 P 2
+L164124 2-23-2016 A 1
+L164125 3-4-2016 P 2
+ClassVenue:
+ID Building RoomNum Teacher
+1 CS 2 Sarim Baig
+2 Civil 7 Bismillah Jan
+Teacher:
+Name Designation Department
+Sarim Baig Assistant Prof. Computer Science
+Bismillah Jan Lecturer Civil Eng.
+Kashif zafar Professor Electrical Eng.
+ FAST NU Lahore Database Systems CL 219
+Page 2
+Q1: create all the tables and add all the rows. (format for date mm-dd-yy e.g, ‘02-22-2017’)
+Q2: Identify one PK from each table and add the constraints using alter.
+Q3: Identify all the FK constraints, and add those constraints, such that:
+a) If the Student table or ClassVenue Table or Teacher table is updated the referencing 
+columns should also reflect the changes.
+b) Student should not be deleted if the details of that order is present.
+Q4: Alter table Student by adding new column “warning count” and deleting “Phone” Column 
+Q5: Perform the following DML actions on your database, identify whether these operations are 
+valid or not, also state how can we make the invalid queries valid? (Your answers should be 
+written in comments along with your queries).
+i. Add new row into Student table, values <L162334, Fozan Shahid, Male, 3.2 > 
+ii. Add new row into ClassVenue table, values <3, CS, 5, Ali>
+iii. Update Teacher table Change “Kashif zafar” name to “Dr. Kashif Zafar”.
+iv. Delete Student with rollnum 
+“L162334” 
+v. Delete Student with rollnum 
+“L164123”
+vi. Delete Attendance with rollnum
+“L164124”, if his status is absent.
+Q6:
+ 
+i. Alter table teacher and add unique constraint on column “Name”.
+ii. Alter Student table and Check Female and Male gender.
+iii. Alter Attendance table and check A and P status.

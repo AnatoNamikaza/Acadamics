@@ -1,0 +1,3 @@
+#run:
+	g++ main.cpp -lpthread -o main.exe
+	./main.exe

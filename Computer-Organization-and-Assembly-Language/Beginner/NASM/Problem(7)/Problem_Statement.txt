@@ -1,0 +1,6 @@
+Program asks the user to press key 'S' . When user press S the timer starts from 0 and will be
+displayed in the middle of display. The user has to keep on pressing U for UP and the screen
+will display a line in up direction. Then user presses R for right and screen will display a line in
+right direction. Then D for down and a line in down direction will be displayed. Then L for left
+and the line will be displayed in left direction. This will form a complete box or rectangle. If the
+box form, then timer stops and program terminates.

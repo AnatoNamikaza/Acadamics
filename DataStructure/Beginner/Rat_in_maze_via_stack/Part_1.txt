@@ -1,0 +1,222 @@
+#include <string>
+#include <iostream>
+
+using namespace std;
+
+int n, m, inti_x, inti_y, fx, fy;
+int** visited;
+
+class node {
+public:
+	int x, y;
+	node* next, *prev;
+	node(int i = -1, int j = -1)
+	{
+		x = i, y = j;
+
+		next = prev = nullptr;
+	}
+	~node() {
+		next = prev = nullptr;
+	}
+};
+
+class stack
+{
+	node head;
+
+public:
+	stack() {}
+
+	void push(node x) {
+			node* temp = head.next;
+			head.next = new node(head.x, head.y);
+			head.next->next = temp;
+			head.x = x.x, head.y = x.y;
+	}
+
+	void pop() {
+		if (isEmpty())
+		{
+			return;
+		}
+		head.x = head.next->x;
+		head.y = head.next->y;
+		head.next = head.next->next;
+	}
+
+	node top() {
+		return head;
+	};
+
+	bool isEmpty() {
+		if (head.x == -1 || head.y == -1)
+			return true;
+		else
+			return false;
+	};
+
+	~stack() {
+		while (!isEmpty()) {
+			pop();
+		}
+	}
+};
+
+
+bool pathfinder(stack s) {
+	node temp = s.top();
+
+
+	/*for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++)
+			cout << visited[i][j];
+		cout << '\n';
+	}
+	cout << '\n';*/
+
+	if (temp.x == fx and temp.y == fy) {
+		while (!s.isEmpty()) {
+			node ftemp = s.top();
+			visited[ftemp.x][ftemp.y] = 2;
+			s.pop();
+		}
+		return true;
+	}
+
+	int i = temp.x, j = temp.y;
+
+	//down
+	if (i + 1 < n && visited[i + 1][j] == 0) {
+		node temp1(i + 1, j);
+		visited[i + 1][j] = 1;
+		s.push(temp1);
+		if (pathfinder(s)) {
+			return true;
+		}
+		visited[i + 1][j] = 0;
+		s.pop();
+	}
+
+	//right
+	if (j + 1 < m && visited[i][j + 1] == 0) {
+		node temp1(i, j + 1);
+		visited[i][j + 1] = 1;
+		s.push(temp1);
+		if (pathfinder(s)) {
+			return true;
+		}
+		visited[i][j + 1] = 0;
+		s.pop();
+	}
+
+	//up
+	if (i - 1 >= 0 && visited[i - 1][j] == 0) {
+		node temp1(i - 1, j);
+		visited[i - 1][j] = 1;
+		s.push(temp1);
+		if (pathfinder(s)) {
+			return true;
+		}
+		visited[i - 1][j] = 0;
+		s.pop();
+	}
+
+
+	//left
+	if (j - 1 >= 0 && visited[i][j - 1] == 0) {
+		node temp1(i, j - 1);
+		visited[i][j - 1] = 1;
+		s.push(temp1);
+		if (pathfinder(s)) {
+			return true;
+		}
+		visited[i][j - 1] = 0;
+		s.pop();
+	}
+
+	return false;
+}
+
+bool isReachable()
+{
+	int i = inti_x, j = inti_y;
+
+
+	stack s;
+
+	node temp(i, j);
+	visited[i][j] = 1;
+	s.push(temp);
+
+	return pathfinder(s);
+}
+
+// Driver code
+int main()
+{
+	
+	//n = 4, m = 5;
+	cout << "Enter the order of the Maze:-\nNo of rows: ";
+	cin >> n;
+	cout << "No of cols: ";
+	cin >> m;
+
+	visited = new int* [n];
+	for (int i = 0; i < m; i++)
+		visited[i] = new int[m] {0};
+
+	int max = (n * m) / 4;
+	std::srand(static_cast<unsigned int>(std::time(nullptr)));
+	for (int count = 0; count <= max; ++count)
+	{
+		int vx = (std::rand()) % (n * m);
+		cout << vx << ' ';
+		int i = vx / n;
+		int j = vx % n;
+
+		visited[i][j] = 1;
+	}
+	cout << '\n';
+	cout << '\n';
+
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++)
+			cout << visited[i][j];
+		cout << '\n';
+	}
+
+	//inti_x = 0, inti_y = 0;
+	cout << "\n\n";
+	cout << "Enter the starting position in the Maze:-\nRow No.: ";
+	cin >> inti_x;
+	cout << "Col No.: ";
+	cin >> inti_y;
+	cout << "\n\n";
+	cout << "Enter the Food coordinates in the Maze:-\nRow No.: ";
+	cin >> fx;
+	cout << "Col No.: ";
+	cin >> fy;
+	//fx = 3, fy = 4;
+
+	if (isReachable()) {
+		cout << "Path Found!" << '\n';
+		visited[fx][fy] = 8;
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < m; j++)
+				cout << visited[i][j];
+			cout << '\n';
+		}
+	}
+	else
+		cout << "No Path Found!" << '\n';
+
+	
+	for (int i = 0; i < n; i++)
+	{
+		delete[] visited[i];
+	}
+	visited = nullptr;
+
+	return 0;
+}

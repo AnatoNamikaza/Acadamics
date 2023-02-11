@@ -1,0 +1,18 @@
+[Template]
+ver=1
+Name=Console Graphics Application 
+Icon=ConsoleToo.ico
+Description=A console application (MSDOS window) with graphics
+Category=Basic
+
+[Unit0]
+CName=main.c
+CppName=main.cpp
+C=consoleapp_c.txt
+Cpp=ConsoleApp_cpp_graph.txt
+
+
+[Project]
+UnitCount=1
+Type=1
+Linker=-lbgi -lgdi32 -luser32

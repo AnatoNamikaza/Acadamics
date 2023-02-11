@@ -1,0 +1,6 @@
+Drowning 50 10
+Killer 80 20
+Remarkable 100 30
+ 	//Note: A space is there to show where the data ends.
+format:
+name points time

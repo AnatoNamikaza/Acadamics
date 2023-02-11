@@ -1,0 +1,106 @@
+Renderer.1 {
+    caretcolor = rgb(110, 110, 255);
+    defaulttextcolor = rgb(120, 120, 120);
+    padding = (6, 4, 6, 4);
+    selectedtextbackgroundcolor = rgb( 10, 110, 255);
+    selectedtextcolor = White;
+    textcolor = rgb(190, 190, 190);
+    texture = "themes/Black.png" Part(0, 114, 60, 40) Middle(15, 0, 30, 40);
+    texturedisabled = None;
+    texturefocused = "themes/Black.png" Part(120, 114, 60, 40) Middle(15, 0, 30, 40);
+    texturehover = "themes/Black.png" Part(60, 114, 60, 40) Middle(15, 0, 30, 40);
+}
+
+ChildWindow.ChildWindow1 {
+    Position = (230, 100);
+    Size = (280, 290);
+    Title = "Add Kid";
+    TitleAlignment = Center;
+    TitleButtons = Close;
+
+    Renderer {
+        backgroundcolor = rgb( 80, 80, 80);
+        bordercolor = Black;
+        borders = (1, 1, 1, 1);
+        distancetoside = 5;
+        maximizebutton = {
+texture = "themes/Black.png" Part(48, 194, 15, 15);
+texturedown = "themes/Black.png" Part(78, 194, 15, 15);
+texturehover = "themes/Black.png" Part(63, 194, 15, 15);
+};
+        minimizebutton = {
+texture = "themes/Black.png" Part(93, 194, 15, 15);
+texturedown = "themes/Black.png" Part(123, 194, 15, 15);
+texturehover = "themes/Black.png" Part(108, 194, 15, 15);
+};
+        paddingbetweenbuttons = 2;
+        showtextontitlebuttons = false;
+        texturebackground = None;
+        texturetitlebar = "themes/Black.png" Part(48, 154, 75, 25) Middle(25, 0, 25, 25);
+        titlecolor = rgb(190, 190, 190);
+
+        closebutton {
+            texture = "themes/Black.png" Part(48, 179, 15, 15);
+            texturedown = "themes/Black.png" Part(78, 179, 15, 15);
+            texturehover = "themes/Black.png" Part(63, 179, 15, 15);
+        }
+    }
+
+    Label.Label1 {
+        AutoSize = true;
+        HorizontalAlignment = Center;
+        Position = (70, 30);
+        ScrollbarPolicy = Never;
+        Size = (124.6, 20);
+        Text = "Enter kid X info";
+        TextSize = 15;
+
+        Renderer {
+            textcolor = rgb(190, 190, 190);
+            texturebackground = None;
+
+            scrollbar {
+                texturearrowdown = "themes/Black.png" Part(163, 174, 20, 20) Middle(0, 1, 20, 19);
+                texturearrowdownhover = "themes/Black.png" Part(183, 174, 20, 20) Middle(0, 1, 20, 19);
+                texturearrowup = "themes/Black.png" Part(163, 154, 20, 20) Middle(0, 0, 20, 19);
+                texturearrowuphover = "themes/Black.png" Part(183, 154, 20, 20) Middle(0, 0, 20, 19);
+                texturethumb = "themes/Black.png" Part(143, 154, 20, 20);
+                texturethumbhover = "themes/Black.png" Part(143, 174, 20, 20);
+                texturetrack = "themes/Black.png" Part(123, 154, 20, 20);
+                texturetrackhover = "themes/Black.png" Part(123, 174, 20, 20);
+            }
+        }
+    }
+
+    EditBox.EditBox1 {
+        Position = (50, 230);
+        Size = (180, 22);
+        Text = "Enter BForm number";
+        TextSize = 13;
+        renderer = &1;
+    }
+
+    EditBox.EditBox2 {
+        Position = (50, 180);
+        Size = (180, 22);
+        Text = "Enter name";
+        TextSize = 13;
+        renderer = &1;
+    }
+
+    EditBox.EditBox3 {
+        Position = (50, 130);
+        Size = (180, 22);
+        Text = "Enter age";
+        TextSize = 13;
+        renderer = &1;
+    }
+
+    EditBox.EditBox4 {
+        Position = (50, 80);
+        Size = (180, 22);
+        Text = "Enter gender";
+        TextSize = 13;
+        renderer = &1;
+    }
+}

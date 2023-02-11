@@ -1,0 +1,9 @@
+Dogs	woof	1
+Cats	meow	1
+Virus	caution	-1
+Exam	CIS330	0
+Plane	737MAX	-1
+Machine	Learning	0
+Eugene	Oregon	1
+Iron	Man	-1
+Thor	Ragnarok	1

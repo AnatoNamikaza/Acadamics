@@ -1,0 +1,3 @@
+#run:
+	g++ -o 2out Q2.cpp -lrt
+	./2out

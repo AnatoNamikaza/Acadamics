@@ -1,0 +1,3 @@
+gcc code.c -o code.exe
+./code.exe
+

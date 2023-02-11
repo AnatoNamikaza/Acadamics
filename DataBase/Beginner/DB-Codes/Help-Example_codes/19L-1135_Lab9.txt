@@ -1,0 +1,135 @@
+----================================================================
+
+----Task_1
+--Create View Owner_Boat
+--as
+--select	[owner].OwnerId,
+--		[owner].ownername,
+--		[owner].Phone,
+--		[owner].city,
+--		[owner].Country,
+--		Boat.BoatName,
+--		Boat.BoatType,
+--		Boat.Price
+
+--From	[owner] left join Boat 
+--on		Boat.ownerId = [owner].ownerId
+--where	BoatName is not null
+--go 
+
+--select * from Owner_Boat
+
+----================================================================
+
+----Task_2
+--Create View Reservation_details
+--as
+--select	Reservation.reserveid,
+--		Reservation.date,
+--		Reservation.day,
+--		SAILOR.SAILORId,
+--		SAILOR.SAILORname,
+--		SAILOR.Phone,
+--		SAILOR.city,
+--		Boat.BoatName,
+--		Boat.BoatType,
+--		Boat.Price,
+--		Boat.ownerId
+
+--From	Reservation left join Boat 
+--on		Boat.boatname = Reservation.boatname
+
+--		left join sailor
+--on		Reservation.sailorid = sailor.sailorId
+--go 
+
+--select * from Reservation_details
+
+----================================================================
+
+----Task_3
+--create procedure Owner_total_boats
+--as begin
+--	select	distinct Owner_Boat.ownername,
+--			COUNT(Owner_Boat.ownername)	as	total_boats_owned 
+	
+--	from Owner_Boat
+
+--	group by Owner_Boat.ownername
+--end
+
+--execute Owner_total_boats
+
+----================================================================
+
+--Task_4
+--Create View Owner_Boat_2
+--as
+--select	*
+--From	Owner_Boat
+--go 
+
+--CREATE TRIGGER Insert_Owner_Boat 
+--ON Owner_Boat_2
+--INSTEAD OF INSERT
+--AS
+--BEGIN
+--    INSERT INTO [owner] values 
+--	(
+--    (SELECT OwnerID FROM INSERTED),
+--	(SELECT OwnerName FROM INSERTED),
+--	(SELECT Phone FROM INSERTED),
+--	(SELECT City FROM INSERTED),
+--	(SELECT Country FROM INSERTED)
+--	)
+
+--    INSERT INTO BOAT values 
+--	(
+--    (SELECT BoatName FROM INSERTED),
+--	(SELECT BoatType FROM INSERTED),
+--	(SELECT Price FROM INSERTED),
+--	(SELECT OwnerID FROM INSERTED)
+--	)
+--END
+
+--select * from Owner_Boat_2
+--select* from Boat
+--select* from [owner]
+
+--delete from [owner] where ownerid= 6
+--delete from Boat where ownerid= 6
+
+--insert into Owner_Boat_2 values (6, 'Max Red', '123-123-123', 'Lahore', 'Japan', 'Loose','Cabin_cruise',5000000)
+
+----================================================================
+
+----Task_5
+--CREATE TRIGGER [safety]   
+--ON	DATABASE   
+--FOR	CREATE_PROCEDURE,
+--	DROP_PROCEDURE  
+--AS   
+--	Print 'Alert! Someone tried to drop a procedure on '+ CAST(getdate() AS varchar(20))
+--	ROLLBACK  
+--GO  
+
+--Drop PROCEDURE Owner_total_boats
+
+--create PROCEDURE test1
+--as begin
+--	declare @i int =0
+--end
+
+----================================================================
+
+----Task_6
+--CREATE TRIGGER View_safety   
+--ON	Owner_Boat_2  
+--Instead of INSERT  
+--AS   
+--	execute Owner_total_boats
+--GO  
+
+--insert into Owner_Boat_2 values (6, 'Max Red', '123-123-123', 'Lahore', 'Japan', 'Loose','Cabin_cruise',5000000)
+
+----================================================================

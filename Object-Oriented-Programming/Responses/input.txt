@@ -1,0 +1,5 @@
+Good	day	1
+Leaving	bye	-1
+Age	Third	0
+Weather	raining	-1
+Sports	Ducks	1

@@ -1,0 +1,3 @@
+g++ filenames -o foldername(anything)
+valgrind --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no ./work
+

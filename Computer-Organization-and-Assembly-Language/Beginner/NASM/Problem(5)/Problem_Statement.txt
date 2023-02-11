@@ -1,0 +1,1 @@
+write a subroutine that takes, as an input, the hexadecimal number of type word, and displays its binary at the middle of the middle row.

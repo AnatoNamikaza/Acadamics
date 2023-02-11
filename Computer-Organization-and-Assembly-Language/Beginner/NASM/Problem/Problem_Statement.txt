@@ -1,0 +1,2 @@
+Write a program to calculate the square of 20 by using a loop that adds 20 to the accumulator 20 times.
+(without use of inc, dec & mul instructions)

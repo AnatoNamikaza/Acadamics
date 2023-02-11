@@ -1,0 +1,7 @@
+Driving 70 26
+Survive 110 15
+Shooting 210 35
+Fighting 280 57
+  	//Note: A space is there to show where the data ends.
+format:
+name points time

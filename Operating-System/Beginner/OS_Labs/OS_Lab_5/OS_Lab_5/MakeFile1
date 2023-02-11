@@ -1,0 +1,3 @@
+#run:
+	g++ Q1.cpp -o 1out
+	./1out

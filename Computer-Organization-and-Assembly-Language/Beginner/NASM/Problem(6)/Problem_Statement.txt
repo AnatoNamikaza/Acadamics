@@ -1,0 +1,7 @@
+The program starts and waits for a keystroke from the user. Your program would handle only
+5 of these keystrokes: key "a" for upper left part, key "b" for upper right part, key "c" for lower
+left part, key "d" for lower right part and key "esc" to terminate the program. When an interrupt
+is generated from the key press (either a or b or c or d), a timer is displayed in the respective
+part of the screen and it keeps displaying till another key stroke (a,b,c,d or esc) is pressed. If esc
+is pressed then the program would terminate, otherwise in case of key a,b,c,d the timer would
+start again and displayed at the respective part of the screen.

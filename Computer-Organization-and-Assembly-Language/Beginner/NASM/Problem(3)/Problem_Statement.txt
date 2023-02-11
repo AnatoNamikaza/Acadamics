@@ -1,0 +1,4 @@
+Write a program to search a particular element from an array using binary search.
+If the element is found set AX to one and otherwise to zero.
+Perform sorting, if required
+(with out use of functions)

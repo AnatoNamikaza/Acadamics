@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/CLION@/Tetris/Board.h
+Piece.h
+E:/CLION@/Tetris/Piece.h
+time.h
+-
+
+E:/CLION@/Tetris/Piece.h
+iostream
+-
+
+E:/CLION@/Tetris/main.cpp
+mygraphics.h
+E:/CLION@/Tetris/mygraphics.h
+iostream
+-
+Board.h
+E:/CLION@/Tetris/Board.h
+
+E:/CLION@/Tetris/mygraphics.h
+windows.h
+-
+

@@ -1,0 +1,5 @@
+Write a program that displays two character (i.e., character 1 and character 2) of your choice at
+the middle row of the screen. One character is on the left most side, and other one is at the right
+most side of the same row. Write a program that moves character 1 to the right, and moves
+character 2 to the left. Your program should stop when both the characters are adjacent to each
+other.

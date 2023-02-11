@@ -1,0 +1,6 @@
+﻿  main.cpp
+E:\VS Projects\R1\R1\Doc_Info.h(10,39): warning C4227: anachronism used: qualifiers on reference are ignored
+E:\VS Projects\R1\R1\Doc_Info.h(29,48): warning C4227: anachronism used: qualifiers on reference are ignored
+E:\VS Projects\R1\R1\Search Engine.h(225,20): warning C4018: '<': signed/unsigned mismatch
+E:\VS Projects\R1\R1\Search Engine.h(265,20): warning C4018: '<': signed/unsigned mismatch
+  R1.vcxproj -> E:\VS Projects\R1\Debug\R1.exe

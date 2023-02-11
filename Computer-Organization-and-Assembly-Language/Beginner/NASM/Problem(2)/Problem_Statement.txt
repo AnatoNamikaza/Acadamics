@@ -1,0 +1,2 @@
+Write a program for multiplication of two 32 bit numbers and the result should be 64 bit number.
+(using only shifting, logical operations i.e add, sub)
