@@ -1,0 +1,1 @@
+-lstdc++fs ../libs/SFML-2.5.1/lib/libsfml-audio-d.a ../libs/SFML-2.5.1/lib/libsfml-graphics-d.a ../libs/SFML-2.5.1/lib/libsfml-window-d.a ../libs/SFML-2.5.1/lib/libsfml-system-d.a ../libs/TGUI-0.8/lib/libtgui-d.a -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

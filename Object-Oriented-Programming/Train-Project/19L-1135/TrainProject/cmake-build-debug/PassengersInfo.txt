@@ -1,0 +1,11 @@
+3
+5
+
+Kid m 8 Anato's_Kid 35404-5176985-5
+Kid f 9 Anato's_Daughter 35404-5176985-6
+Adult m 25 Anato's_Braza 35404-5176885-9
+Kid f 10 Anato's_Sis 35404-5176985-7
+Adult m 27 Anato2 35404-5176885-6
+Adult f 35 Anato3 35404-5176885-7
+Adult m 45 Anato4 35404-5176885-1
+Adult f 65 Anato5 35404-5176885-3 

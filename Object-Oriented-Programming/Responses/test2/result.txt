@@ -1,0 +1,11 @@
+I am happy: Ragnarok
+I am angry: Man
+I am happy: woof
+I am happy: meow
+I am neither angry nor happy: Learning
+I am happy: Oregon
+I am angry: caution
+I am neither angry nor happy: CIS330
+I am angry: 737MAX
+I am happy: woof
+I am angry: caution
