@@ -1,1 +1,0 @@
-tgui_add_example(many_different_widgets SOURCES ManyDifferentWidgets.cpp)

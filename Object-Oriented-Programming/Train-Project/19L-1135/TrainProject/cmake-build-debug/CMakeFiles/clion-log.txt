@@ -1,6 +1,0 @@
-"D:\CLion 2019.3.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\CLION\CLionProjects\TrainProject
--- Found SFML 2.5.1 in D:/Libraries/SFML/lib/cmake/SFML
--- Found TGUI 0.8.7 in D:/Libraries/TGUI/lib/cmake/TGUI
--- Configuring done
--- Generating done
--- Build files have been written to: D:/CLION/CLionProjects/TrainProject/cmake-build-debug

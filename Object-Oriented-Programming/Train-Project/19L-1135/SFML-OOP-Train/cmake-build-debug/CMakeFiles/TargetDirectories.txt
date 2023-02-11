@@ -1,3 +1,0 @@
-C:/Users/darkn/CLionProjects/SFMLTest/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-C:/Users/darkn/CLionProjects/SFMLTest/cmake-build-debug/CMakeFiles/OOPTrain.dir
-C:/Users/darkn/CLionProjects/SFMLTest/cmake-build-debug/CMakeFiles/edit_cache.dir

@@ -1,3 +1,0 @@
-"D:\CLion 2019.3.3\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\INSERT_NAME.dir/objects.a
-"D:\program files\minGW\mingw64\bin\ar.exe" cr CMakeFiles\INSERT_NAME.dir/objects.a @CMakeFiles\INSERT_NAME.dir\objects1.rsp
-"D:\program files\minGW\mingw64\bin\g++.exe" -g   -Wl,--whole-archive CMakeFiles\INSERT_NAME.dir/objects.a -Wl,--no-whole-archive  -o INSERT_NAME.exe -Wl,--out-implib,libINSERT_NAME.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\INSERT_NAME.dir\linklibs.rsp

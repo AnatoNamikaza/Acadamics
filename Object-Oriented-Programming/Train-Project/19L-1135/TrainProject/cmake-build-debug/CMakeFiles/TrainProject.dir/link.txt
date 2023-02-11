@@ -1,3 +1,0 @@
-"D:\CLion 2019.3.3\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\TrainProject.dir/objects.a
-"D:\program files\minGW\mingw64\bin\ar.exe" cr CMakeFiles\TrainProject.dir/objects.a @CMakeFiles\TrainProject.dir\objects1.rsp
-"D:\program files\minGW\mingw64\bin\g++.exe" -g   -Wl,--whole-archive CMakeFiles\TrainProject.dir/objects.a -Wl,--no-whole-archive  -o TrainProject.exe -Wl,--out-implib,libTrainProject.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\TrainProject.dir\linklibs.rsp
