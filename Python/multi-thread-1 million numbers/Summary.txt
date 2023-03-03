@@ -1,0 +1,27 @@
+Question#1:
+First method was simple logic to generate random numbers and store them in file.
+It took 0.2564 seconds  to generate 1 Million random numbers.
+In Second method, pthread were used to generate random numbers and store them in file.
+It took 0.4811 seconds  to generate 1 Million random numbers.
+In thrid method, pthread and mutex were used to generate random numbers and store them in file.
+It took 0.5230 seconds  to generate 1 Million random numbers.
+
+Question#2:
+First method logic was chosen as it was simple to implement.
+Second method logic was chosen as to increase the execution time and do task in parallel.
+Third method logic was chosen as even in multithreading used in second method, it is 
+possible that two threads can work on the same task at the same time, which causes
+error in desired results so mutex is used to provide synchronization between threads.
+
+Question#3:
+I was surprised to see that synchronized multithreading is a bit slower as compared to
+simple multithreading without use of mutex. Other than that, the rest of the methods
+performed as expected.
+
+Question#4:
+It might improve it a little but not that significantly.
+Even if you increase the number of tasks done at the same time, it doesn't necessarily
+change the time it takes to execute a single individual task. It does improves the 
+overall execution of the program but to an extent.
+Reference:
+https://www.quora.com/Does-the-more-threads-a-CPU-has-make-it-faster
