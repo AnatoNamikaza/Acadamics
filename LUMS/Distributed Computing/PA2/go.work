@@ -1,0 +1,4 @@
+go 1.21.2
+
+use ./Assigment2_Code/src/raft
+use ./Assigment2_Code/src/labrpc
