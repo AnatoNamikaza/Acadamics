@@ -1,0 +1,990 @@
+01. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+estimation_of_obesity_levels_based_on_eating_habits_and_physical_condition = fetch_ucirepo(id=544) 
+  
+# data (as pandas dataframes) 
+X = estimation_of_obesity_levels_based_on_eating_habits_and_physical_condition.data.features 
+y = estimation_of_obesity_levels_based_on_eating_habits_and_physical_condition.data.targets 
+  
+# metadata 
+print(estimation_of_obesity_levels_based_on_eating_habits_and_physical_condition.metadata) 
+  
+# variable information 
+print(estimation_of_obesity_levels_based_on_eating_habits_and_physical_condition.variables) 
+
+01. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+02. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+hepatitis = fetch_ucirepo(id=46) 
+  
+# data (as pandas dataframes) 
+X = hepatitis.data.features 
+y = hepatitis.data.targets 
+  
+# metadata 
+print(hepatitis.metadata) 
+  
+# variable information 
+print(hepatitis.variables) 
+
+02. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+03. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+apartment_for_rent_classified = fetch_ucirepo(id=555) 
+  
+# data (as pandas dataframes) 
+X = apartment_for_rent_classified.data.features 
+y = apartment_for_rent_classified.data.targets 
+  
+# metadata 
+print(apartment_for_rent_classified.metadata) 
+  
+# variable information 
+print(apartment_for_rent_classified.variables) 
+
+03. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+04. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+heart_failure_clinical_records = fetch_ucirepo(id=519) 
+  
+# data (as pandas dataframes) 
+X = heart_failure_clinical_records.data.features 
+y = heart_failure_clinical_records.data.targets 
+  
+# metadata 
+print(heart_failure_clinical_records.metadata) 
+  
+# variable information 
+print(heart_failure_clinical_records.variables) 
+
+04. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+05. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+ai4i_2020_predictive_maintenance_dataset = fetch_ucirepo(id=601) 
+  
+# data (as pandas dataframes) 
+X = ai4i_2020_predictive_maintenance_dataset.data.features 
+y = ai4i_2020_predictive_maintenance_dataset.data.targets 
+  
+# metadata 
+print(ai4i_2020_predictive_maintenance_dataset.metadata) 
+  
+# variable information 
+print(ai4i_2020_predictive_maintenance_dataset.variables) 
+
+05. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+06. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+online_shoppers_purchasing_intention_dataset = fetch_ucirepo(id=468) 
+  
+# data (as pandas dataframes) 
+X = online_shoppers_purchasing_intention_dataset.data.features 
+y = online_shoppers_purchasing_intention_dataset.data.targets 
+  
+# metadata 
+print(online_shoppers_purchasing_intention_dataset.metadata) 
+  
+# variable information 
+print(online_shoppers_purchasing_intention_dataset.variables) 
+
+06. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+07. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+soybean_large = fetch_ucirepo(id=90) 
+  
+# data (as pandas dataframes) 
+X = soybean_large.data.features 
+y = soybean_large.data.targets 
+  
+# metadata 
+print(soybean_large.metadata) 
+  
+# variable information 
+print(soybean_large.variables) 
+
+07. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+08. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+soybean_small = fetch_ucirepo(id=91) 
+  
+# data (as pandas dataframes) 
+X = soybean_small.data.features 
+y = soybean_small.data.targets 
+  
+# metadata 
+print(soybean_small.metadata) 
+  
+# variable information 
+print(soybean_small.variables) 
+
+08. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+09. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+cdc_diabetes_health_indicators = fetch_ucirepo(id=891) 
+  
+# data (as pandas dataframes) 
+X = cdc_diabetes_health_indicators.data.features 
+y = cdc_diabetes_health_indicators.data.targets 
+  
+# metadata 
+print(cdc_diabetes_health_indicators.metadata) 
+  
+# variable information 
+print(cdc_diabetes_health_indicators.variables) 
+
+09. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+10. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+bone_marrow_transplant_children = fetch_ucirepo(id=565) 
+  
+# data (as pandas dataframes) 
+X = bone_marrow_transplant_children.data.features 
+y = bone_marrow_transplant_children.data.targets 
+  
+# metadata 
+print(bone_marrow_transplant_children.metadata) 
+  
+# variable information 
+print(bone_marrow_transplant_children.variables) 
+
+10. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+11. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+ionosphere = fetch_ucirepo(id=52) 
+  
+# data (as pandas dataframes) 
+X = ionosphere.data.features 
+y = ionosphere.data.targets 
+  
+# metadata 
+print(ionosphere.metadata) 
+  
+# variable information 
+print(ionosphere.variables) 
+
+11. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+12. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+early_stage_diabetes_risk_prediction = fetch_ucirepo(id=529) 
+  
+# data (as pandas dataframes) 
+X = early_stage_diabetes_risk_prediction.data.features 
+y = early_stage_diabetes_risk_prediction.data.targets 
+  
+# metadata 
+print(early_stage_diabetes_risk_prediction.metadata) 
+  
+# variable information 
+print(early_stage_diabetes_risk_prediction.variables) 
+
+12. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+13. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+diabetic_retinopathy_debrecen = fetch_ucirepo(id=329) 
+  
+# data (as pandas dataframes) 
+X = diabetic_retinopathy_debrecen.data.features 
+y = diabetic_retinopathy_debrecen.data.targets 
+  
+# metadata 
+print(diabetic_retinopathy_debrecen.metadata) 
+  
+# variable information 
+print(diabetic_retinopathy_debrecen.variables) 
+
+13. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+14. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+spambase = fetch_ucirepo(id=94) 
+  
+# data (as pandas dataframes) 
+X = spambase.data.features 
+y = spambase.data.targets 
+  
+# metadata 
+print(spambase.metadata) 
+  
+# variable information 
+print(spambase.variables) 
+
+14. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+15. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+room_occupancy_estimation = fetch_ucirepo(id=864) 
+  
+# data (as pandas dataframes) 
+X = room_occupancy_estimation.data.features 
+y = room_occupancy_estimation.data.targets 
+  
+# metadata 
+print(room_occupancy_estimation.metadata) 
+  
+# variable information 
+print(room_occupancy_estimation.variables) 
+
+15. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+16. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+zoo = fetch_ucirepo(id=111) 
+  
+# data (as pandas dataframes) 
+X = zoo.data.features 
+y = zoo.data.targets 
+  
+# metadata 
+print(zoo.metadata) 
+  
+# variable information 
+print(zoo.variables) 
+
+16. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+17. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+horse_colic = fetch_ucirepo(id=47) 
+  
+# data (as pandas dataframes) 
+X = horse_colic.data.features 
+y = horse_colic.data.targets 
+  
+# metadata 
+print(horse_colic.metadata) 
+  
+# variable information 
+print(horse_colic.variables) 
+
+17. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+18. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+algerian_forest_fires = fetch_ucirepo(id=547) 
+  
+# data (as pandas dataframes) 
+X = algerian_forest_fires.data.features 
+y = algerian_forest_fires.data.targets 
+  
+# metadata 
+print(algerian_forest_fires.metadata) 
+  
+# variable information 
+print(algerian_forest_fires.variables) 
+
+18. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+19. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+bike_sharing = fetch_ucirepo(id=275) 
+  
+# data (as pandas dataframes) 
+X = bike_sharing.data.features 
+y = bike_sharing.data.targets 
+  
+# metadata 
+print(bike_sharing.metadata) 
+  
+# variable information 
+print(bike_sharing.variables) 
+
+19. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+20. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+seoul_bike_sharing_demand = fetch_ucirepo(id=560) 
+  
+# data (as pandas dataframes) 
+X = seoul_bike_sharing_demand.data.features 
+y = seoul_bike_sharing_demand.data.targets 
+  
+# metadata 
+print(seoul_bike_sharing_demand.metadata) 
+  
+# variable information 
+print(seoul_bike_sharing_demand.variables) 
+
+20. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+21. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+waveform_database_generator_version_1 = fetch_ucirepo(id=107) 
+  
+# data (as pandas dataframes) 
+X = waveform_database_generator_version_1.data.features 
+y = waveform_database_generator_version_1.data.targets 
+  
+# metadata 
+print(waveform_database_generator_version_1.metadata) 
+  
+# variable information 
+print(waveform_database_generator_version_1.variables) 
+
+21. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+22. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+cylinder_bands = fetch_ucirepo(id=32) 
+  
+# data (as pandas dataframes) 
+X = cylinder_bands.data.features 
+y = cylinder_bands.data.targets 
+  
+# metadata 
+print(cylinder_bands.metadata) 
+  
+# variable information 
+print(cylinder_bands.variables) 
+
+22. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+23. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+statlog_vehicle_silhouettes = fetch_ucirepo(id=149) 
+  
+# data (as pandas dataframes) 
+X = statlog_vehicle_silhouettes.data.features 
+y = statlog_vehicle_silhouettes.data.targets 
+  
+# metadata 
+print(statlog_vehicle_silhouettes.metadata) 
+  
+# variable information 
+print(statlog_vehicle_silhouettes.variables) 
+
+23. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+24. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+higher_education_students_performance_evaluation = fetch_ucirepo(id=856) 
+  
+# data (as pandas dataframes) 
+X = higher_education_students_performance_evaluation.data.features 
+y = higher_education_students_performance_evaluation.data.targets 
+  
+# metadata 
+print(higher_education_students_performance_evaluation.metadata) 
+  
+# variable information 
+print(higher_education_students_performance_evaluation.variables) 
+
+24. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+25. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+congressional_voting_records = fetch_ucirepo(id=105) 
+  
+# data (as pandas dataframes) 
+X = congressional_voting_records.data.features 
+y = congressional_voting_records.data.targets 
+  
+# metadata 
+print(congressional_voting_records.metadata) 
+  
+# variable information 
+print(congressional_voting_records.variables) 
+
+25. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+26. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+air_quality = fetch_ucirepo(id=360) 
+  
+# data (as pandas dataframes) 
+X = air_quality.data.features 
+y = air_quality.data.targets 
+  
+# metadata 
+print(air_quality.metadata) 
+  
+# variable information 
+print(air_quality.variables) 
+
+26. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+27. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+productivity_prediction_of_garment_employees = fetch_ucirepo(id=597) 
+  
+# data (as pandas dataframes) 
+X = productivity_prediction_of_garment_employees.data.features 
+y = productivity_prediction_of_garment_employees.data.targets 
+  
+# metadata 
+print(productivity_prediction_of_garment_employees.metadata) 
+  
+# variable information 
+print(productivity_prediction_of_garment_employees.variables) 
+
+27. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+28. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+aids_clinical_trials_group_study_175 = fetch_ucirepo(id=890) 
+  
+# data (as pandas dataframes) 
+X = aids_clinical_trials_group_study_175.data.features 
+y = aids_clinical_trials_group_study_175.data.targets 
+  
+# metadata 
+print(aids_clinical_trials_group_study_175.metadata) 
+  
+# variable information 
+print(aids_clinical_trials_group_study_175.variables) 
+
+28. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+29. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+connectionist_bench_sonar_mines_vs_rocks = fetch_ucirepo(id=151) 
+  
+# data (as pandas dataframes) 
+X = connectionist_bench_sonar_mines_vs_rocks.data.features 
+y = connectionist_bench_sonar_mines_vs_rocks.data.targets 
+  
+# metadata 
+print(connectionist_bench_sonar_mines_vs_rocks.metadata) 
+  
+# variable information 
+print(connectionist_bench_sonar_mines_vs_rocks.variables) 
+
+29. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+30. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+optical_recognition_of_handwritten_digits = fetch_ucirepo(id=80) 
+  
+# data (as pandas dataframes) 
+X = optical_recognition_of_handwritten_digits.data.features 
+y = optical_recognition_of_handwritten_digits.data.targets 
+  
+# metadata 
+print(optical_recognition_of_handwritten_digits.metadata) 
+  
+# variable information 
+print(optical_recognition_of_handwritten_digits.variables) 
+
+30. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+31. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+risk_factor_prediction_of_chronic_kidney_disease = fetch_ucirepo(id=857) 
+  
+# data (as pandas dataframes) 
+X = risk_factor_prediction_of_chronic_kidney_disease.data.features 
+y = risk_factor_prediction_of_chronic_kidney_disease.data.targets 
+  
+# metadata 
+print(risk_factor_prediction_of_chronic_kidney_disease.metadata) 
+  
+# variable information 
+print(risk_factor_prediction_of_chronic_kidney_disease.variables) 
+
+31. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+32. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+page_blocks_classification = fetch_ucirepo(id=78) 
+  
+# data (as pandas dataframes) 
+X = page_blocks_classification.data.features 
+y = page_blocks_classification.data.targets 
+  
+# metadata 
+print(page_blocks_classification.metadata) 
+  
+# variable information 
+print(page_blocks_classification.variables) 
+
+32. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+33. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+fertility = fetch_ucirepo(id=244) 
+  
+# data (as pandas dataframes) 
+X = fertility.data.features 
+y = fertility.data.targets 
+  
+# metadata 
+print(fertility.metadata) 
+  
+# variable information 
+print(fertility.variables) 
+
+33. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+34. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+taiwanese_bankruptcy_prediction = fetch_ucirepo(id=572) 
+  
+# data (as pandas dataframes) 
+X = taiwanese_bankruptcy_prediction.data.features 
+y = taiwanese_bankruptcy_prediction.data.targets 
+  
+# metadata 
+print(taiwanese_bankruptcy_prediction.metadata) 
+  
+# variable information 
+print(taiwanese_bankruptcy_prediction.variables) 
+
+34. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+35. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+travel_reviews = fetch_ucirepo(id=484) 
+  
+# data (as pandas dataframes) 
+X = travel_reviews.data.features 
+y = travel_reviews.data.targets 
+  
+# metadata 
+print(travel_reviews.metadata) 
+  
+# variable information 
+print(travel_reviews.variables) 
+
+35. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+36. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+cervical_cancer_risk_factors = fetch_ucirepo(id=383) 
+  
+# data (as pandas dataframes) 
+X = cervical_cancer_risk_factors.data.features 
+y = cervical_cancer_risk_factors.data.targets 
+  
+# metadata 
+print(cervical_cancer_risk_factors.metadata) 
+  
+# variable information 
+print(cervical_cancer_risk_factors.variables) 
+
+36. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+37. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+rt_iot2022 = fetch_ucirepo(id=942) 
+  
+# data (as pandas dataframes) 
+X = rt_iot2022.data.features 
+y = rt_iot2022.data.targets 
+  
+# metadata 
+print(rt_iot2022.metadata) 
+  
+# variable information 
+print(rt_iot2022.variables) 
+
+37. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+38. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+support2 = fetch_ucirepo(id=880) 
+  
+# data (as pandas dataframes) 
+X = support2.data.features 
+y = support2.data.targets 
+  
+# metadata 
+print(support2.metadata) 
+  
+# variable information 
+print(support2.variables) 
+
+38. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+39. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+chess_king_rook_vs_king_pawn = fetch_ucirepo(id=22) 
+  
+# data (as pandas dataframes) 
+X = chess_king_rook_vs_king_pawn.data.features 
+y = chess_king_rook_vs_king_pawn.data.targets 
+  
+# metadata 
+print(chess_king_rook_vs_king_pawn.metadata) 
+  
+# variable information 
+print(chess_king_rook_vs_king_pawn.variables) 
+
+39. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+40. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+census_income = fetch_ucirepo(id=20) 
+  
+# data (as pandas dataframes) 
+X = census_income.data.features 
+y = census_income.data.targets 
+  
+# metadata 
+print(census_income.metadata) 
+  
+# variable information 
+print(census_income.variables) 
+
+40. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+41. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+glioma_grading_clinical_and_mutation_features = fetch_ucirepo(id=759) 
+  
+# data (as pandas dataframes) 
+X = glioma_grading_clinical_and_mutation_features.data.features 
+y = glioma_grading_clinical_and_mutation_features.data.targets 
+  
+# metadata 
+print(glioma_grading_clinical_and_mutation_features.metadata) 
+  
+# variable information 
+print(glioma_grading_clinical_and_mutation_features.variables) 
+
+41. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+42. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+mushroom = fetch_ucirepo(id=73) 
+  
+# data (as pandas dataframes) 
+X = mushroom.data.features 
+y = mushroom.data.targets 
+  
+# metadata 
+print(mushroom.metadata) 
+  
+# variable information 
+print(mushroom.variables) 
+
+42. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+43. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+solar_flare = fetch_ucirepo(id=89) 
+  
+# data (as pandas dataframes) 
+X = solar_flare.data.features 
+y = solar_flare.data.targets 
+  
+# metadata 
+print(solar_flare.metadata) 
+  
+# variable information 
+print(solar_flare.variables) 
+
+43. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+44. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+annealing = fetch_ucirepo(id=3) 
+  
+# data (as pandas dataframes) 
+X = annealing.data.features 
+y = annealing.data.targets 
+  
+# metadata 
+print(annealing.metadata) 
+  
+# variable information 
+print(annealing.variables) 
+
+44. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+45. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+statlog_german_credit_data = fetch_ucirepo(id=144) 
+  
+# data (as pandas dataframes) 
+X = statlog_german_credit_data.data.features 
+y = statlog_german_credit_data.data.targets 
+  
+# metadata 
+print(statlog_german_credit_data.metadata) 
+  
+# variable information 
+print(statlog_german_credit_data.variables) 
+
+45. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+46. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+flags = fetch_ucirepo(id=40) 
+  
+# data (as pandas dataframes) 
+X = flags.data.features 
+y = flags.data.targets 
+  
+# metadata 
+print(flags.metadata) 
+  
+# variable information 
+print(flags.variables) 
+
+46. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+47. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+statlog_landsat_satellite = fetch_ucirepo(id=146) 
+  
+# data (as pandas dataframes) 
+X = statlog_landsat_satellite.data.features 
+y = statlog_landsat_satellite.data.targets 
+  
+# metadata 
+print(statlog_landsat_satellite.metadata) 
+  
+# variable information 
+print(statlog_landsat_satellite.variables) 
+
+47. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+48. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+statlog_vehicle_silhouettes = fetch_ucirepo(id=149) 
+  
+# data (as pandas dataframes) 
+X = statlog_vehicle_silhouettes.data.features 
+y = statlog_vehicle_silhouettes.data.targets 
+  
+# metadata 
+print(statlog_vehicle_silhouettes.metadata) 
+  
+# variable information 
+print(statlog_vehicle_silhouettes.variables) 
+
+48. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+49. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+ilpd_indian_liver_patient_dataset = fetch_ucirepo(id=225) 
+  
+# data (as pandas dataframes) 
+X = ilpd_indian_liver_patient_dataset.data.features 
+y = ilpd_indian_liver_patient_dataset.data.targets 
+  
+# metadata 
+print(ilpd_indian_liver_patient_dataset.metadata) 
+  
+# variable information 
+print(ilpd_indian_liver_patient_dataset.variables) 
+
+49. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+50. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+hcv_data = fetch_ucirepo(id=571) 
+  
+# data (as pandas dataframes) 
+X = hcv_data.data.features 
+y = hcv_data.data.targets 
+  
+# metadata 
+print(hcv_data.metadata) 
+  
+# variable information 
+print(hcv_data.variables) 
+
+50. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+51. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+student_performance = fetch_ucirepo(id=320) 
+  
+# data (as pandas dataframes) 
+X = student_performance.data.features 
+y = student_performance.data.targets 
+  
+# metadata 
+print(student_performance.metadata) 
+  
+# variable information 
+print(student_performance.variables) 
+
+51. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+52. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+covertype = fetch_ucirepo(id=31) 
+  
+# data (as pandas dataframes) 
+X = covertype.data.features 
+y = covertype.data.targets 
+  
+# metadata 
+print(covertype.metadata) 
+  
+# variable information 
+print(covertype.variables) 
+
+52. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+53. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+letter_recognition = fetch_ucirepo(id=59) 
+  
+# data (as pandas dataframes) 
+X = letter_recognition.data.features 
+y = letter_recognition.data.targets 
+  
+# metadata 
+print(letter_recognition.metadata) 
+  
+# variable information 
+print(letter_recognition.variables) 
+
+53. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+54. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+diabetes_130_us_hospitals_for_years_1999_2008 = fetch_ucirepo(id=296) 
+  
+# data (as pandas dataframes) 
+X = diabetes_130_us_hospitals_for_years_1999_2008.data.features 
+y = diabetes_130_us_hospitals_for_years_1999_2008.data.targets 
+  
+# metadata 
+print(diabetes_130_us_hospitals_for_years_1999_2008.metadata) 
+  
+# variable information 
+print(diabetes_130_us_hospitals_for_years_1999_2008.variables) 
+
+54. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+55. -----------------------------------------------------------
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+connect_4 = fetch_ucirepo(id=26) 
+  
+# data (as pandas dataframes) 
+X = connect_4.data.features 
+y = connect_4.data.targets 
+  
+# metadata 
+print(connect_4.metadata) 
+  
+# variable information 
+print(connect_4.variables) 
+
+55. -----------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
