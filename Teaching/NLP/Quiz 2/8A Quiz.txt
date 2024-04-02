@@ -1,0 +1,26 @@
+Q1)
+a)
+Draw RNN architecture diagarm and wirte equeation along with dimensions of all layers 
+and weight matrices for the following.
+Suppose the input words are one hot encoded vectors,
+input sequence of lenght 3 (lets say 3 words)
+hidden layer units are 5
+embedding size  (dense word vector dimensions) = 6
+V = vocabulary = 8
+
+
+
+Q2)
+a)
+Draw neural network (for the task of neutral language model) architecture diagarm 
+and write equations along with dimensions of all layers and weight matrices for the following.
+Suppose the input words are one hot encoded vectors.
+input sequence of lenght 3 (lets say 3 words)
+hidden layer units are 5
+embedding size (dense word vector dimensions) = 6
+V = vocabulary = 8
+
+
+
+b)
+what are total number of parameters for the above architecture?
