@@ -1,0 +1,17 @@
+numpy 
+pandas 
+matplotlib 
+opencv-python 
+pydicom 
+
+# For windows
+# tensorflow 
+
+# For MacOS
+tensorflow-macos
+tensorflow-metal
+
+torch 
+torchvision 
+monai 
+scikit-learn
